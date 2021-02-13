@@ -1,0 +1,32 @@
+server:
+  port: 9999
+  servlet:
+    # 应用的访问路径
+    context-path: /v1
+spring:
+  application:
+    name: bl-blog-manage-view
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:1111
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # Spring boot actuator端点启用和暴露
+
+
+
+
+#MyBatis
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.bravelionet.**.domain #类型扫描不持支*需要结合方法
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件 这里没有加* 这是错误一
+  mapper-locations: classpath*:com/bravelionet/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true # 映射驼峰
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

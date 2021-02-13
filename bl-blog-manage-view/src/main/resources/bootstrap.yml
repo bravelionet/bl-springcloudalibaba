@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: bl-blog-manage-view
+  cloud:
+    nacos:
+      config:
+        server-addr: http://localhost:1111
+        file-extension: yml  # 指定配置文件类型
+        group: blog_grep #
+        shared-configs[0]: # 多个环境项配置
+          data-id: bl-blog-global-common.yml # 配置公共配置(多环境)
+          group: common_defalt_grep # 公共配置 分组(有利于管理)
+          refresh: true # 是否自动刷新

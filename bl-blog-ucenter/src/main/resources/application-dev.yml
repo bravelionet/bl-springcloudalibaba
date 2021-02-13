@@ -1,0 +1,16 @@
+server:
+  port: 9095
+spring:
+  application:
+    name: bl-blog-ucenter
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:1111
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # Spring boot actuator端点启用和暴露

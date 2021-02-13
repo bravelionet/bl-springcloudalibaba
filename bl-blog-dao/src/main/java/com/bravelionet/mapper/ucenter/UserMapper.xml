@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bravelionet.dao.ucenter.UserMapper">
+
+
+    <!-- 根据用户Id查询用户信息-->
+    <select id="selectUserById" parameterType="java.lang.Long" resultType="com.bravelionet.domain.ucenter.User">
+       select * from bl_user where id = #{id}
+    </select>
+
+</mapper>

@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: bl-blog-dispatch
+  cloud:
+    cloud:
+      profiles: dev # 官方推荐, profile 配置在 bootstrap启动文件中
+    nacos:
+      config:
+        server-addr: http://localhost:1111
+        file-extension: yml  # 指定配置文件类型
+        group: blog_grep #
+        prefix: ${spring.application.name} # 文件 spring.cloud.nacos.config.prefix 默认 spring.application.name
+        shared-configs[0]: # 多个环境项配置
+            data-id: bl-blog-global-common.yml # 配置公共配置(多环境)
+            group: common_defalt_grep # 公共配置 分组(有利于管理)
+            refresh: true # 是否自动刷新
+
+# ${prefile}-${spring.cloud.profile}.${file-extension}
+# bl-blog-dispatch-dev.yml
+# 注意 : 启动 jar 不进行指定 profile 时  默认 spring.cloud.profile 不进行配置, 则是 ${prefile}.${file-extension}
+
+# nacos config 配置规则
+# prefix 默认为 spring.application.name 的值，也可以通过配置项 spring.cloud.nacos.config.prefix来配置。
+# spring.profiles.active 即为当前环境对应的 profile，详情可以参考 Spring Boot文档。 注意：当 spring.profiles.active 为空时，对应的连接符 - 也将不存在，dataId 的拼接格式变成 ${prefix}.${file-extension}
+# file-exetension 为配置内容的数据格式，可以通过配置项 spring.cloud.nacos.config.file-extension 来配置。目前只支持 properties 和 yaml 类型。
+

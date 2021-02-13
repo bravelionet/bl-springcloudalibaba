@@ -1,0 +1,52 @@
+server:
+  port: 9095
+spring:
+  application:
+    name: bl-blog-ucenter
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:1111
+
+# 数据库配置防止 nacos
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # Spring boot actuator端点启用和暴露
+
+
+
+feign:
+  # feign启用hystrix，才能熔断、降级
+  # hystrix:
+  # enabled: true
+  # 启用 okhttp 关闭默认 httpclient
+  httpclient:
+    enabled: false #关闭httpclient
+    # 配置连接池
+    max-connections: 3000 #feign的最大连接数
+    max-connections-per-route: 3000 #fegin单个路径的最大连接数
+  okhttp:
+    enabled: true
+  # 请求与响应的压缩以提高通信效率
+  compression:
+    request:
+      enabled: true
+      min-request-size: 1024
+      mime-types: text/xml,application/xml,application/json
+    response:
+      enabled: true
+
+
+#MyBatis
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.bravelionet.**.domain #类型扫描不持支*需要结合方法
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件 这里没有加* 这是错误一
+  mapper-locations: classpath*:com/bravelionet/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true # 映射驼峰
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
