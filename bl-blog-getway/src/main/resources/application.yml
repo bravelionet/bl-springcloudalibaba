@@ -17,11 +17,7 @@ spring:
             #断言,路径相匹配的进行路由
    #         - Path= /**
 
-  redis:
-    host: 192.168.100.222
-    port: 6379
-    password:
-    database: 13
+
 
 management:
   endpoints:

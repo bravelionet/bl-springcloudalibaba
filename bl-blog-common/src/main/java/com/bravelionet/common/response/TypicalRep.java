@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 
 /**
  * @Author : Lionet
@@ -16,10 +18,10 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class TypicalRep<T> {
+public class TypicalRep<T> implements Serializable {
 
     private Integer code;
     private String msg;
-    private T result;
+    private T data;
 
 }
