@@ -1,55 +1,50 @@
-package com.bravelionet.getway.init;
+package com.bravelionet.gateway.init;
 
-import com.bravelionet.common.constant.redis.manageview.RoutesRedisKeyConstant;
-import com.bravelionet.common.constant.response.TypicalRepStatus;
-import com.bravelionet.common.response.TypicalRep;
-import com.bravelionet.common.utils.ObjectMapperUtils;
-import com.bravelionet.domain.manageview.RoutesBean;
-import com.bravelionet.feign.client.manageview.InitRoutesClient;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.data.redis.core.ReactiveRedisOperations;
-import org.springframework.stereotype.Component;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Schedulers;
-
-import java.time.Duration;
-import java.util.List;
-import java.util.Optional;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * @Author : Lionet
  * @Date : 2021/2/8  17:51
  * @Description : 
  */
-@Component
-public class InitRouteService implements CommandLineRunner {
+
+@Configuration
+public class InitRouteService  {
+/*
 
     private static final Logger logger = LoggerFactory.getLogger(InitRouteService.class);
 
-    @Autowired
-    ObjectMapper objectMapper;
-    InitRoutesClient initRoutesClient;
+    GateWayRoutesHander getWayRoutesHander;
 
     ReactiveRedisOperations<String, Object> reactiveRedisOperations;
 
-    public InitRouteService(InitRoutesClient initRoutesClient, ReactiveRedisOperations reactiveRedisOperations) {
-        this.initRoutesClient = initRoutesClient;
+    public InitRouteService(ReactiveRedisOperations reactiveRedisOperations, GateWayRoutesHander getWayRoutesHander) {
         this.reactiveRedisOperations = reactiveRedisOperations;
+        this.getWayRoutesHander = getWayRoutesHander;
     }
 
-    /**
-     * @Author: Lionet
-     * @Date 2021/2/14 22:06
-     * @Description 初始化 GetWay RouteList
-     * @Param:
-     * @Return:
-     */
+    @Override
+    public void run(String... args) {
+       // getWayRoutesHander.hander();
+
+    }
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+    /*
+
     @Override
     public void run(String... args) throws Exception {
         Mono.fromCallable(() -> {
@@ -94,7 +89,8 @@ public class InitRouteService implements CommandLineRunner {
                     } else {
                         return Mono.error(RuntimeException::new);
                     }
-                }).subscribe();/*
+                }).subscribe();*/
+    /*
                 .flatMap(x -> {
                     return reactiveRedisOperations.opsForHash().values(RoutesRedisKeyConstant.GATEWAY_ROUTES)
                             .doOnError(erro -> {
@@ -115,8 +111,9 @@ public class InitRouteService implements CommandLineRunner {
                     }
                     System.out.println("s = " + routesBeans);
                     return Mono.just(x);
-                }).subscribe();*/
+                }).subscribe();
 
 
-    }
+}
+     */
 }

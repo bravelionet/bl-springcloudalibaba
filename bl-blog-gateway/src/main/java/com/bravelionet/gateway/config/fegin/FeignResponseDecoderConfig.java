@@ -1,4 +1,4 @@
-package com.bravelionet.getway.config.fegin;
+package com.bravelionet.gateway.config.fegin;
 
 import feign.Client;
 import feign.codec.Decoder;

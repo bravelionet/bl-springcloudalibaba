@@ -19,7 +19,7 @@
         <module>bl-blog-api</module>
         <module>bl-blog-dao</module>
         <module>bl-blog-ucenter</module>
-        <module>bl-blog-getway</module>
+        <module>bl-blog-gateway</module>
         <module>bl-blog-template</module>
         <module>bl-blog-praise</module>
         <module>bl-blog-feign-client</module>
@@ -160,7 +160,7 @@
             </dependency>
 
             <dependency>
-                <artifactId>bl-blog-getway</artifactId>
+                <artifactId>bl-blog-gateway</artifactId>
                 <groupId>com.bravelionet</groupId>
                 <version>${bl-blog.version}</version>
             </dependency>

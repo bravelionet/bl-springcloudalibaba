@@ -1,4 +1,4 @@
-package com.bravelionet.getway.config.redis;
+package com.bravelionet.gateway.config.redis;
 
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;

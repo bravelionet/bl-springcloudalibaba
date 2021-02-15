@@ -1,4 +1,4 @@
-package com.bravelionet.getway;
+package com.bravelionet.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,10 +9,10 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients(basePackages = {"com.bravelionet.feign.client.manageview"})
-@ComponentScan(basePackages = {"com.bravelionet."})
-public class BlBlogGetWayApplication {
+@ComponentScan(basePackages = {"com.bravelionet"})
+public class BlBlogGateWayApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BlBlogGetWayApplication.class, args);
+        SpringApplication.run(BlBlogGateWayApplication.class, args);
     }
 /*   List<RoutesBean> routesBeans = null;
                     try {

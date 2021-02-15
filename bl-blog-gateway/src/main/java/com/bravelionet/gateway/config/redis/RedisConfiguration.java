@@ -1,4 +1,4 @@
-package com.bravelionet.getway.config.redis;
+package com.bravelionet.gateway.config.redis;
 
 import com.bravelionet.common.utils.ObjectMapperUtils;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
