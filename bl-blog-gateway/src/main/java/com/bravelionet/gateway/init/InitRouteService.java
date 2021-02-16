@@ -1,6 +1,13 @@
 package com.bravelionet.gateway.init;
 
+import com.bravelionet.gateway.hander.GateWayRoutesHander;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.core.ReactiveRedisOperations;
 
 /**
  * @Author : Lionet
@@ -9,8 +16,8 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-public class InitRouteService  {
-/*
+public class InitRouteService  implements ApplicationRunner {
+
 
     private static final Logger logger = LoggerFactory.getLogger(InitRouteService.class);
 
@@ -22,17 +29,26 @@ public class InitRouteService  {
         this.reactiveRedisOperations = reactiveRedisOperations;
         this.getWayRoutesHander = getWayRoutesHander;
     }
-
+/*
     @Override
     public void run(String... args) {
-       // getWayRoutesHander.hander();
 
+    }*/
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        logger.info(" [ GetWay 启动初始化 Routes  ...... ");
+        try {
+            getWayRoutesHander.hander();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw  new RuntimeException();
+        }
     }
 
 
 
 
-*/
 
 
 

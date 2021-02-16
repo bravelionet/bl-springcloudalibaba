@@ -10,9 +10,11 @@ spring:
 
 
 
-
 management:
   endpoints:
     web:
       exposure:
         include: "*" # Spring boot actuator端点启用和暴露
+  endpoint:
+    health:
+      show-details: WHEN_AUTHORIZED

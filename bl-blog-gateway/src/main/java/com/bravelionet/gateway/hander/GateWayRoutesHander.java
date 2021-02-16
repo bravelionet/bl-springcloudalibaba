@@ -2,8 +2,11 @@ package com.bravelionet.gateway.hander;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.gateway.route.InMemoryRouteDefinitionRepository;
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinitionRepository;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -13,9 +16,11 @@ import reactor.core.publisher.Mono;
  * @Date 2021/2/15 20:29
  * @Description todo 待单例
  */
+@Configuration
+public class GateWayRoutesHander {
 
-public class GateWayRoutesHander implements RouteDefinitionRepository {
-
+    @Autowired
+    InMemoryRouteDefinitionRepository inMemoryRouteDefinitionRepository;
     private static final Logger logger = LoggerFactory.getLogger(GateWayRoutesHander.class);
     private GateWayRoutesHanderService gateWayRoutesHanderService;
 
@@ -23,31 +28,14 @@ public class GateWayRoutesHander implements RouteDefinitionRepository {
         this.gateWayRoutesHanderService = gateWayRoutesHanderService;
     }
 
-    @Override
-    @Primary
-    public Flux<RouteDefinition> getRouteDefinitions() {
-        Flux<RouteDefinition> hander = gateWayRoutesHanderService.hander();
-        return hander;
-    }
-
-  /*  @Primary
     public void hander() {
-        Flux<RouteDefinition> hander = gateWayRoutesHanderService.hander();
-        hander.flatMap(routeDefinition -> {
-            return this.save(Mono.just(routeDefinition));
-        }).subscribeOn(Schedulers.elastic()).doOnError(error -> {
-            logger.error("[ 初始化  GetWay Routes 失败 Error: {} ]", error);
-        }).subscribe();
+        gateWayRoutesHanderService.hander()
+                .flatMap(x -> inMemoryRouteDefinitionRepository.save(Mono.just(x)))
+                .doOnError(error -> logger.error(" [ GetWay 启动初始化 Routes 失败  Error: {} ] ", error))
+                //.subscribe();
+                .blockFirst();
 
-    }*/
-
-    @Override
-    public Mono<Void> save(Mono<RouteDefinition> route) {
-        return null;
     }
 
-    @Override
-    public Mono<Void> delete(Mono<String> routeId) {
-        return null;
-    }
+
 }
