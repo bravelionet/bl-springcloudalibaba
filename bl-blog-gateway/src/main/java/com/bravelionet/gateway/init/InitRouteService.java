@@ -12,17 +12,13 @@ import org.springframework.data.redis.core.ReactiveRedisOperations;
 /**
  * @Author : Lionet
  * @Date : 2021/2/8  17:51
- * @Description : 
+ * @Description :
  */
 
 @Configuration
-public class InitRouteService  implements ApplicationRunner {
-
-
+public class InitRouteService implements ApplicationRunner {
     private static final Logger logger = LoggerFactory.getLogger(InitRouteService.class);
-
     GateWayRoutesHander getWayRoutesHander;
-
     ReactiveRedisOperations<String, Object> reactiveRedisOperations;
 
     public InitRouteService(ReactiveRedisOperations reactiveRedisOperations, GateWayRoutesHander getWayRoutesHander) {
@@ -32,18 +28,14 @@ public class InitRouteService  implements ApplicationRunner {
 /*
     @Override
     public void run(String... args) {
-
+        logger.info(" [ GetWay 启动初始化 Routes  ...... ");
+            getWayRoutesHander.hander();
     }*/
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         logger.info(" [ GetWay 启动初始化 Routes  ...... ");
-        try {
-            getWayRoutesHander.hander();
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw  new RuntimeException();
-        }
+        getWayRoutesHander.hander();
     }
 
 
