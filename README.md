@@ -10,9 +10,14 @@
 
 ### spring-cloud-starter-alibaba-nacos-discovery
 
+### spring-cloud-starter-alibaba-sentinel 
+
+## 实例 包  com.bravelionet.*.config.properties  **Properties Configuration 可省略, Naocs yml 格式严格, DataId yml 支持元数据多配置 (不建议省略,整合插件查询直观性)
+
 ## 注意 : 该案例使用任何中间件 ip,使用 nginx 代理 或 nacos 中心化配置
 
 ### 譬如 : nacos 地址,使用 nginx代理 或 本地 nacos port 8848 修改为 1111
+
 
 ### mysql 配置使用 nacos config
 ####            spring:

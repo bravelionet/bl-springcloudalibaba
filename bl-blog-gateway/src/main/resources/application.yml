@@ -20,4 +20,3 @@ management:
       show-details: WHEN_AUTHORIZED
 
 
-  skip-auth-urls

@@ -1,4 +1,4 @@
-package com.bravelionet.ucenter.config;
+package com.bravelionet.config.properties;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.boot.context.properties.ConfigurationProperties;

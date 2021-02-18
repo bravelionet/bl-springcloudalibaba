@@ -1,5 +1,6 @@
 package com.bravelionet.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.bravelionet.api.manageview.InitRoutesService;
 import com.bravelionet.common.response.TypicResponseUtils;
 import com.bravelionet.common.response.TypicalRep;
@@ -23,6 +24,7 @@ public class InitRoutesController {
     }
 
     @GetMapping("/routes-all")
+    @SentinelResource(value = "selectAll")
     public TypicalRep<Object> selectAll() {
 
         return TypicResponseUtils.success(iInitRoutesService.selectAll());

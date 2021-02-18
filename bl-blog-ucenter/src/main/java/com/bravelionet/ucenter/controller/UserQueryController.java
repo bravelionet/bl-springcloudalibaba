@@ -1,5 +1,6 @@
 package com.bravelionet.ucenter.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.bravelionet.api.ucenter.IUserQueryService;
 import com.bravelionet.domain.ucenter.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class UserQueryController {
     IUserQueryService iUserQueryService;
 
     @GetMapping("/select-user-by-id/{id}")
+    @SentinelResource(value = "selectUserById")
     public User selectUserById(@PathVariable("id") Long id) {
         User user = iUserQueryService.selectUserById(id);
         return user;

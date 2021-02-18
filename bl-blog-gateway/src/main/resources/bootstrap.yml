@@ -15,3 +15,7 @@ spring:
           data-id: bl-blog-global-redis.yml # 配置 redis 配置(多环境)
           group: common_defalt_grep # 公共配置 分组(有利于管理)
           refresh: true # 是否自动刷新
+        shared-configs[2]:
+          data-id: application-skip-auth-urls.yml
+          group: gateway-config
+          refresh: true
