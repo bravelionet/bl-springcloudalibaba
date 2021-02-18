@@ -38,5 +38,5 @@ build/
 .idea
 /.idea
 .idea
-application-pro.yml
-bootstrap-pro.yml
+application-prod.yml
+bootstrap-prod.yml
