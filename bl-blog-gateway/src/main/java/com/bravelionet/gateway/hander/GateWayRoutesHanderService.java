@@ -4,7 +4,7 @@ import com.bravelionet.common.constant.response.TypicalRepStatus;
 import com.bravelionet.common.response.TypicalRep;
 import com.bravelionet.common.utils.ObjectMapperUtils;
 import com.bravelionet.domain.manageview.RoutesBean;
-import com.bravelionet.feign.client.manageview.InitRoutesClient;
+import com.bravelionet.feign.client.manageview.BlBlogManageViewClient;
 import com.fasterxml.jackson.core.type.TypeReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +13,6 @@ import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Schedulers;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -23,11 +22,11 @@ import java.util.*;
 public class GateWayRoutesHanderService {
     private static final Logger logger = LoggerFactory.getLogger(GateWayRoutesHanderService.class);
 
-    private InitRoutesClient initRoutesClient;
+    private BlBlogManageViewClient blBlogManageViewClient;
 
 
-    public GateWayRoutesHanderService(InitRoutesClient initRoutesClient) {
-        this.initRoutesClient = initRoutesClient;
+    public GateWayRoutesHanderService(BlBlogManageViewClient blBlogManageViewClient) {
+        this.blBlogManageViewClient = blBlogManageViewClient;
 
     }
 
@@ -35,7 +34,7 @@ public class GateWayRoutesHanderService {
     public Flux<RouteDefinition> hander() {
 
         return Mono.fromCallable(() -> {
-            TypicalRep<Object> responseResult = initRoutesClient.selectAll();
+            TypicalRep<Object> responseResult = blBlogManageViewClient.selectAll();
             if (TypicalRepStatus.RESPONSE_STATUS_200.equals(responseResult.getCode())) {
                 List<RoutesBean> routesBeans = ObjectMapperUtils.getObjectMapper().convertValue(responseResult.getData(), new TypeReference<List<RoutesBean>>() {
                 });
@@ -78,7 +77,7 @@ public class GateWayRoutesHanderService {
                     PredicateDefinition predicateDefinition = new PredicateDefinition();
                     predicateDefinition.setName("Path");
                     Map<String, String> predicateMap = new HashMap<>();
-                    predicateMap.put("pattern",toutesPredicates);
+                    predicateMap.put("pattern", toutesPredicates);
                     predicateDefinition.setArgs(predicateMap);
                     routeDefinition.setPredicates(Arrays.asList(predicateDefinition));
                     return Mono.just(routeDefinition);
