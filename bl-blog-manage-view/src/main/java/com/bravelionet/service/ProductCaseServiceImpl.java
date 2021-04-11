@@ -2,6 +2,7 @@ package com.bravelionet.service;
 
 import com.bravelionet.api.manageview.IProductCaseService;
 import com.bravelionet.dao.manageview.ProductCaseMapper;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.stereotype.Service;
 
 /**
@@ -29,6 +30,7 @@ public class ProductCaseServiceImpl  implements IProductCaseService {
      * @date 2021/4/8 21:52
      */
     @Override
+    @GlobalTransactional
     public int updateById(Long id, Integer mount) {
         productCaseMapper.updateById(id,mount);
         return 0;

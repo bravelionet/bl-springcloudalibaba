@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description : 初始化 routes
  */
 @RestController
-@RequestMapping("/init")
+@RequestMapping("/v1/init")
 public class InitRoutesController {
 
     InitRoutesService iInitRoutesService;

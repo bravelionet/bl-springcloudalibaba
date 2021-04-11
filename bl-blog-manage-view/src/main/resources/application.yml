@@ -2,7 +2,7 @@ server:
   port: 9999
   servlet:
     # 应用的访问路径
-    context-path: /v1
+    context-path:
 spring:
   application:
     name: bl-blog-manage-view
@@ -30,3 +30,26 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true # 映射驼峰
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+seata:
+  enabled: true
+  application-id: bl-blog-manage-view
+  tx-service-group: lionet_tx_group
+  enable-auto-data-source-proxy: true
+  config:
+    type: nacos
+    nacos:
+      namespace: ""
+      serverAddr: http://localhost:1111
+      group: SEATA_GROUP
+      userName: "lionet"
+      password: "123456"
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: http://localhost:1111
+      namespace: ""
+      userName: "lionet"
+      password: "123456"

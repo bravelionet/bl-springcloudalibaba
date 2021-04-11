@@ -13,3 +13,25 @@ management:
     web:
       exposure:
         include: "*" # Spring boot actuator端点启用和暴露
+
+seata:
+  enabled: true
+  application-id: bl-blog-global
+  tx-service-group: lionet_tx_group
+  enable-auto-data-source-proxy: true
+  config:
+    type: nacos
+    nacos:
+      namespace: ""
+      serverAddr: http://localhost:1111
+      group: SEATA_GROUP
+      userName: "lionet"
+      password: "123456"
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: http://localhost:1111
+      namespace: ""
+      userName: "lionet"
+      password: "123456"

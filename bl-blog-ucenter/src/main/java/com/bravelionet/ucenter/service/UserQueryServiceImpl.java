@@ -3,6 +3,7 @@ package com.bravelionet.ucenter.service;
 import com.bravelionet.api.ucenter.IUserQueryService;
 import com.bravelionet.dao.ucenter.UserMapper;
 import com.bravelionet.domain.ucenter.User;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,6 @@ public class UserQueryServiceImpl implements IUserQueryService {
     public UserQueryServiceImpl(UserMapper userMapper) {
         this.userMapper = userMapper;
     }
-
 
     @Override
     public User selectUserById(Long id) {

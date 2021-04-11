@@ -2,6 +2,7 @@ package com.bravelionet.ucenter.service;
 
 import com.bravelionet.api.ucenter.IBalanceService;
 import com.bravelionet.dao.ucenter.BalanceMapper;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.stereotype.Service;
 
 /**
@@ -28,6 +29,7 @@ public class BalanceServiceImpl implements IBalanceService {
      * @author Lionet
      * @date 2021/4/8 21:54
      */
+    @GlobalTransactional
     public int updateMoneyByUserId(Long money, Long userId){
         int i = balanceMapper.updateMoneyByUserId(money, userId);
         return i;

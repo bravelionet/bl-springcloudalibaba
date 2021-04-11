@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages={"com.bravelionet.dispatch.client"})
+@EnableFeignClients(basePackages={"com.bravelionet.feign.client"})
 public class BlBlogDispatchApplication {
     public static void main(String[] args) {
         SpringApplication.run(BlBlogDispatchApplication.class,args);

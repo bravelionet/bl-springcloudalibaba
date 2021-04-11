@@ -11,3 +11,4 @@ spring:
           data-id: bl-blog-global-common.yml # 配置公共配置(多环境)
           group: common_defalt_grep # 公共配置 分组(有利于管理)
           refresh: true # 是否自动刷新
+
