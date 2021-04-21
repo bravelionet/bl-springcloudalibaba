@@ -7,6 +7,7 @@ import com.bravelionet.domain.ucenter.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @Author : Lionet
@@ -32,6 +33,7 @@ public class UserServiceImpl implements IUserService {
      * @author : Lionet
      * @date : 2021/4/21  14:54
      */
+    @Transactional
     @Override
     public User addUser(User user) {
         UserPublisherEvent userPublisherEvent = new UserPublisherEvent(this);
@@ -41,9 +43,9 @@ public class UserServiceImpl implements IUserService {
         logger.info("发布用户事件  ");
         eventPublisherService.publishEvent(userPublisherEvent);
         logger.info("发布用户事件完成  ");
-        return user;
+        throw  new RuntimeException();
     }
-
+    @Transactional
     @Override
     public User delete(User user) {
         UserPublisherEvent userPublisherEvent = new UserPublisherEvent(this);

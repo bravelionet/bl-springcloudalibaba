@@ -26,7 +26,14 @@
             <artifactId>bl-blog-feign-client</artifactId>
             <groupId>com.bravelionet</groupId>
         </dependency>
-
+        <dependency>
+            <artifactId>bl-blog-dao</artifactId>
+            <groupId>com.bravelionet</groupId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -83,10 +90,7 @@
             <groupId>io.seata</groupId>
             <artifactId>seata-spring-boot-starter</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-        </dependency>
+
 
 
     </dependencies>
