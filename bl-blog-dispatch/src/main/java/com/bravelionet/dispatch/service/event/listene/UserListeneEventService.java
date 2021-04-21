@@ -32,7 +32,7 @@ public class UserListeneEventService {
     @Async
     @EventListener(value = UserPublisherEvent.class, condition = "#userPublisherEvent.enumUserOperate.operate.equals('add')")
     public void listeneUser(UserPublisherEvent userPublisherEvent) {
-        logger.info(" one 监听用户事件 [ info: {} ]", JSON.toJSONString(userPublisherEvent.getSource()));
+        logger.info(" one 监听用户事件 [ info: {} ]", JSON.toJSONString(userPublisherEvent));
         try {
 
             Thread.sleep(10000);

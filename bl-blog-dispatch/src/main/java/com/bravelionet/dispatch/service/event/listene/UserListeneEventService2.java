@@ -32,7 +32,7 @@ private final static Logger logger = LoggerFactory.getLogger(UserListeneEventSer
     @EventListener(value = UserPublisherEvent.class )
     public void listeneUser(UserPublisherEvent userPublisherEvent){
         //throw new RuntimeException();
-        logger.info(" two 监听用户事件 [ info: {} ]", JSON.toJSONString(userPublisherEvent.getSource()));
+        logger.info(" two 监听用户事件 [ info: {} ]", JSON.toJSONString(userPublisherEvent));
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
