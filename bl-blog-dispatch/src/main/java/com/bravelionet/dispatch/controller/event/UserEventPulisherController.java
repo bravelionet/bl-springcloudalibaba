@@ -1,6 +1,6 @@
 package com.bravelionet.dispatch.controller.event;
 
-import com.bravelionet.dispatch.service.event.publisher.service.UserEventPulisher;
+import com.bravelionet.dispatch.service.event.publisher.IUserService;
 import com.bravelionet.domain.ucenter.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserEventPulisherController {
 
     private final static Logger logger = LoggerFactory.getLogger(UserEventPulisherController.class);
-    private final UserEventPulisher userEventPulisher;
 
-    public UserEventPulisherController(UserEventPulisher userEventPulisher){
-        this.userEventPulisher = userEventPulisher;
+    private final IUserService iUserService;
+
+    public UserEventPulisherController(IUserService iUserService) {
+        this.iUserService = iUserService;
     }
-
     @GetMapping("/pulisher/user")
     public void testUserEventPulisherController(){
 
@@ -28,7 +28,8 @@ public class UserEventPulisherController {
         user.setAddress("华东地区");
         user.setAge(99);
         user.setSex(1);
-        userEventPulisher.pulisherUserEvent(user);
+        iUserService.addUser(user);
+        iUserService.delete(user);
         logger.info("发布用户事件完成 ");
 
     }

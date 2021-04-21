@@ -21,6 +21,7 @@ private final static Logger logger = LoggerFactory.getLogger(UserListeneEventSer
     /**
      * <p>  事件监听方法  </p>
      * <p>  不进行开启 {@link Async} 时事件发布者会等待监听器执行完成  </p>
+     * <p>  {@link EventListener} 如果不指定 condition 该属性,则监听所有 value 指定 监听事件 </p>
      *
      * @param userPublisherEvent 发布事件数据
      * @return
@@ -28,7 +29,7 @@ private final static Logger logger = LoggerFactory.getLogger(UserListeneEventSer
      * @date : 2021/4/21  11:48
      */
     @Async
-    @EventListener(UserPublisherEvent.class)
+    @EventListener(value = UserPublisherEvent.class )
     public void listeneUser(UserPublisherEvent userPublisherEvent){
         //throw new RuntimeException();
         logger.info(" two 监听用户事件 [ info: {} ]", JSON.toJSONString(userPublisherEvent.getSource()));
