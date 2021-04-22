@@ -1,6 +1,6 @@
-package com.bravelionet.dispatch.controller.event;
+package com.bravelionet.ucenter.controller.event;
 
-import com.bravelionet.dispatch.service.event.publisher.IUserService;
+import com.bravelionet.ucenter.event.publisher.IUserService;
 import com.bravelionet.domain.ucenter.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

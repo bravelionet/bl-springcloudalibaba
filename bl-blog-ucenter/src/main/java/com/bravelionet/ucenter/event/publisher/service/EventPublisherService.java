@@ -1,6 +1,6 @@
-package com.bravelionet.dispatch.service.event.publisher.service;
+package com.bravelionet.ucenter.event.publisher.service;
 
-import com.bravelionet.dispatch.service.event.publisher.IEventPublisher;
+import com.bravelionet.ucenter.event.publisher.IEventPublisher;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.stereotype.Service;

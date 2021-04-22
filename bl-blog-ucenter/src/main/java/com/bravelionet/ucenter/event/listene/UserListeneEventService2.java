@@ -1,7 +1,7 @@
-package com.bravelionet.dispatch.service.event.listene;
+package com.bravelionet.ucenter.event.listene;
 
 import com.alibaba.fastjson.JSON;
-import com.bravelionet.dispatch.service.event.instance.UserPublisherEvent;
+import com.bravelionet.ucenter.event.instance.UserPublisherEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.event.EventListener;

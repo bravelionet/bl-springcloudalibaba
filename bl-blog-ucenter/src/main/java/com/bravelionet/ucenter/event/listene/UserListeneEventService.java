@@ -1,10 +1,9 @@
-package com.bravelionet.dispatch.service.event.listene;
+package com.bravelionet.ucenter.event.listene;
 
 import com.alibaba.fastjson.JSON;
-import com.bravelionet.dispatch.service.event.instance.UserPublisherEvent;
+import com.bravelionet.ucenter.event.instance.UserPublisherEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
@@ -25,6 +24,7 @@ public class UserListeneEventService {
      * <p>  事件监听方法  </p>
      * <p>  不进行开启 {@link Async} 时事件发布者会等待监听器执行完成  </p>
      * <p>  {@link EventListener}  指定 condition 可进行颗粒度缩小 </p>
+     * <p>  {@link EventListener}  指定 phase 事务同步器标记,TransactionPhase.AFTER_COMMIT代表当发布者事务提交后才被监听</p>
      *
      * @param userPublisherEvent 发布事件数据
      * @return
@@ -41,7 +41,7 @@ public class UserListeneEventService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }*/
-        throw new RuntimeException();
+        //throw new RuntimeException();
 
     }
 

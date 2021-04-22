@@ -1,4 +1,4 @@
-package com.bravelionet.dispatch.service.event.publisher;
+package com.bravelionet.ucenter.event.publisher;
 
 
 import com.bravelionet.domain.ucenter.User;

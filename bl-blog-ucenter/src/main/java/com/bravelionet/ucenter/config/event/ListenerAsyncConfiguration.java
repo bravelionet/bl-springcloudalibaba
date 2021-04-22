@@ -1,4 +1,4 @@
-package com.bravelionet.dispatch.config.event;
+package com.bravelionet.ucenter.config.event;
 
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.context.annotation.Configuration;

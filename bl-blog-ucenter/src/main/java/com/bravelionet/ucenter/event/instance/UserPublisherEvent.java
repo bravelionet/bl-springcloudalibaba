@@ -1,4 +1,4 @@
-package com.bravelionet.dispatch.service.event.instance;
+package com.bravelionet.ucenter.event.instance;
 
 import com.bravelionet.common.enums.EnumUserOperate;
 import com.bravelionet.domain.ucenter.User;

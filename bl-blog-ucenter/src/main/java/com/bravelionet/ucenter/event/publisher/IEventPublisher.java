@@ -1,4 +1,4 @@
-package com.bravelionet.dispatch.service.event.publisher;
+package com.bravelionet.ucenter.event.publisher;
 
 
 import org.springframework.context.ApplicationEventPublisher;
