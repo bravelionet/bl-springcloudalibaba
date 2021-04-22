@@ -1,16 +1,16 @@
 
 # 相关技术栈 
-|     技术栈       |                       版本                 |                   日期                 |    
-| -------------- | ---------------------------- | ----------------------------- |
-| **Springboot**           |      2.3.2.RELEASE              |    2021-02-13    |
-| **SpringCloud**          |        Hoxton.SR9               |    2021-02-13    | 
-| **SpringCloudAlibaba**   |      2.2.4.RELEASE              |    2021-02-13    | 
-| **nacos-config**         |      2.2.4.RELEASE              |    2021-02-13    |
-| **nacos-discovery**      |      2.2.4.RELEASE              |    2021-02-13    | 
-| **sentinel**             |      2.2.4.RELEASE              |    2021-02-16    |
-| **seata**                |         1.4.0                   |    2021-04-11    | 
-
-
+|     技术栈       |                       版本                 |  日期          |  整合模块                     |     
+| -------------- | ---------------------------- | ----------------------------- |    ---------------------------       |   
+| **Springboot**           |      2.3.2.RELEASE              |    2021-02-13    |    all                               |   
+| **SpringCloud**          |        Hoxton.SR9               |    2021-02-13    |    all                               |   
+| **SpringCloudAlibaba**   |      2.2.4.RELEASE              |    2021-02-13    |    all                               |   
+| **nacos-config**         |      2.2.4.RELEASE              |    2021-02-13    |    all                               |   
+| **nacos-discovery**      |      2.2.4.RELEASE              |    2021-02-13    |    all                               |   
+| **sentinel**             |      2.2.4.RELEASE              |    2021-02-16    |    all                               |   
+| **seata**                |         1.4.0                   |    2021-04-11    |   bl-blog-dispatch / bl-blog-ucenter |    
+| **ApplicationEventPublisher**           |                  |    2021-04-21    |    ucenter                           |   
+ 
 
 ### 相关技术说在下方公众号文章发布
 
